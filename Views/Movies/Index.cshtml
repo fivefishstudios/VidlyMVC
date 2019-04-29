@@ -1,0 +1,27 @@
+﻿@model List<Vidly.Models.Movie>
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Movies</h2>
+
+<table class="table table-striped">
+    <thead>
+    <td>Name</td>
+    <td>Id</td>
+    <td>View</td>
+    </thead>
+    <tbody>
+
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Name</td>
+                <td>@movie.Id</td>
+                <td>@Html.ActionLink("Movie Details", "View", "Movies", new { id=movie.Id }, null)</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
