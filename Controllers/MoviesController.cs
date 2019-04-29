@@ -28,8 +28,8 @@ namespace Vidly.Controllers
             return View(_movies);
         }
 
-        // Movies/View/99
-        [Route("Movies/View/{id}")]
+        // GET: Movies/DetailView/99
+        [Route("Movies/DetailView/{id}")]
         public ActionResult View(int id)
         {
             Movie movie = _movies.Find(x => x.Id == id);

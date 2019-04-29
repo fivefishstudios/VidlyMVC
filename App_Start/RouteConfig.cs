@@ -15,13 +15,6 @@ namespace Vidly
 
             // attribute routing 
             routes.MapMvcAttributeRoutes();
-            
-            // convention based routing
-            //routes.MapRoute(
-            //    "MoviesByReleaseDate",
-            //    "movies/released/{year}/{month}",
-            //    new { controller = "Movies", action = "ByReleaseDate"}
-            //    );
 
             routes.MapRoute(
                 name: "Default",
