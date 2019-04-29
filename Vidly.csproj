@@ -157,6 +157,10 @@
     <Compile Include="Migrations\201904290524303_ApplyAnnotationToCustomerName.Designer.cs">
       <DependentUpon>201904290524303_ApplyAnnotationToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904291318121_PopulateMoviesDB.cs" />
+    <Compile Include="Migrations\201904291318121_PopulateMoviesDB.Designer.cs">
+      <DependentUpon>201904291318121_PopulateMoviesDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904290524303_ApplyAnnotationToCustomerName.resx">
       <DependentUpon>201904290524303_ApplyAnnotationToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904291318121_PopulateMoviesDB.resx">
+      <DependentUpon>201904291318121_PopulateMoviesDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

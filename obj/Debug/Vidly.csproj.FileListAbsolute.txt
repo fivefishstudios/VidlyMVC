@@ -88,3 +88,4 @@ F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resourc
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipTypeContext.resources
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipType.resources
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.ApplyAnnotationToCustomerName.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMoviesDB.resources
