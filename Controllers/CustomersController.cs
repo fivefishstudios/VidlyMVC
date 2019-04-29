@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,28 +10,45 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        List<Customer> _customers;
+
+        private MyDBContext _context;
+
         public CustomersController()
         {
-            _customers = new List<Customer>()
-            {
-                new Customer() { Id=1, Name="Roberto Gonza", City="Brentwood" },
-                new Customer() { Id=2, Name="John Doe", City="Nashville" },
-                new Customer() { Id=49, Name="Mary Poppins", City="Franklin"}
-            };
-            
+            _context = new MyDBContext();
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Customers
         public ActionResult Index()
         {
-                
-            return View(_customers);
+            var customers = GetAllCustomers();
+            return View(customers);
         }
 
         public ActionResult View(int Id)
         {
-            Customer customer = _customers.Find(x => x.Id == Id);
+            // NOTE: This works, using List methods
+            //var customers = GetAllCustomers().ToList();
+            //Customer customer = customers.Find(x => x.Id == Id);
+
+            // NOTE: This also works, without using a List<> but using IEnumerable methods
+            var customers = GetAllCustomers();
+            Customer customer = customers.SingleOrDefault( c => c.Id == Id);
+                 
             return View(customer);
         }
+
+
+        private IEnumerable<Customer> GetAllCustomers()
+        {
+            return _context.Customers;
+        }
+
+
     }
 }
