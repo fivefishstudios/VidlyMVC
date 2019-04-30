@@ -8,9 +8,12 @@
 
 <table class="table table-striped">
     <thead>
-        <td>Name</td>
-        <td>Id</td>
-        <td>View</td>
+        <tr>
+            <th>Name</th>
+            <th>Discount Rate</th>
+            <th>Id</th>
+            <th>View</th>
+        </tr>
     </thead>
     <tbody>
             
@@ -18,6 +21,7 @@
         {
             <tr>
                 <td>@customer.Name</td>
+                <td>@customer.MembershipType.DiscountRate%</td>
                 <td>@customer.Id</td>
                 <td>@Html.ActionLink("View Details", "View", "Customers", new { id=customer.Id }, null)</td>
             </tr>

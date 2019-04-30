@@ -26,7 +26,7 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = GetAllCustomers();
+            var customers = GetAllCustomers().Include(c => c.MembershipType);
             return View(customers);
         }
 
@@ -44,7 +44,7 @@ namespace Vidly.Controllers
         }
 
 
-        private IEnumerable<Customer> GetAllCustomers()
+        private IQueryable<Customer> GetAllCustomers()
         {
             return _context.Customers;
         }
