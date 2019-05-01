@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201905011300007_PopulateMovieStockColumn.Designer.cs">
       <DependentUpon>201905011300007_PopulateMovieStockColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905011320410_PopulateMovieDates.cs" />
+    <Compile Include="Migrations\201905011320410_PopulateMovieDates.Designer.cs">
+      <DependentUpon>201905011320410_PopulateMovieDates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -349,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905011300007_PopulateMovieStockColumn.resx">
       <DependentUpon>201905011300007_PopulateMovieStockColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011320410_PopulateMovieDates.resx">
+      <DependentUpon>201905011320410_PopulateMovieDates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

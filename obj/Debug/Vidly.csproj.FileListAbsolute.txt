@@ -188,3 +188,4 @@ F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreDB.resources
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenreDB.resources
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovieGenreColumn.resources
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovieStockColumn.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovieDates.resources

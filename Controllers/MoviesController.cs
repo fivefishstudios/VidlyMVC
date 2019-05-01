@@ -36,7 +36,7 @@ namespace Vidly.Controllers
         [Route("Movies/DetailView/{id}")]
         public ActionResult View(int id)
         {
-            Movie movie = GetAllMovies().SingleOrDefault(x => x.Id == id);
+            Movie movie = GetAllMovies().Include( m=> m.Genre ).SingleOrDefault(x => x.Id == id);
             return View(movie);
         }
 

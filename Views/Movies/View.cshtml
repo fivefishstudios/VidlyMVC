@@ -8,11 +8,16 @@
 @if (Model == null)
 {
     <p>There is no movie found.</p>
-} else
+}
+else
 {
     <h1>@Model.Name</h1>
-
-    <p>starring @Model.Actor</p>
-
     <small>Id=@Model.Id</small>
+    <hr />
+
+    <p>Genre: @Model.Genre.GenreName</p>
+    <p>Starring @Model.Actor</p>
+    <p>Qty in Stock: @Model.Stock</p>
+    <p>Release Date: @Model.ReleaseDate.ToString("MM/dd/yyyy")</p>
+
 }
