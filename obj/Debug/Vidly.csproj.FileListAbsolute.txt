@@ -178,3 +178,9 @@ F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cache
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.dll
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.pdb
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.MembershipTypes.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateCustomersDB.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateDescriptionFields.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddBirthdateToCustomerDB.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateBirthdateInCustomerDB.resources

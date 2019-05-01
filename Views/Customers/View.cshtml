@@ -11,8 +11,13 @@
 else
 {
     <h2>@Model.Name</h2>
-    <p>@Model.City</p>
-    <small>Id: @Model.Id</small>
+    <small>Customer Id: @Model.Id</small>
+    <hr />
+    <p>Membership Type: @Model.MembershipType.Description</p>
+    <p>Discount: @Model.MembershipType.DiscountRate%</p>
+    <p>Address: @Model.City</p>
+    <p>Birthdate: @Model.Birthdate.ToString("MM/dd/yyyy")</p>
+
 }
 
 

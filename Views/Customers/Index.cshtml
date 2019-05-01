@@ -10,8 +10,10 @@
     <thead>
         <tr>
             <th>Name</th>
+            <th>Membership Type</th>
             <th>Discount Rate</th>
-            <th>Id</th>
+            <th>Birthday</th>
+            <th>Cust.Id</th>
             <th>View</th>
         </tr>
     </thead>
@@ -21,7 +23,9 @@
         {
             <tr>
                 <td>@customer.Name</td>
+                <td>@customer.MembershipType.Description</td>
                 <td>@customer.MembershipType.DiscountRate%</td>
+                <td>@customer.Birthdate</td>
                 <td>@customer.Id</td>
                 <td>@Html.ActionLink("View Details", "View", "Customers", new { id=customer.Id }, null)</td>
             </tr>

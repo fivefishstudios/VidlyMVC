@@ -161,6 +161,26 @@
     <Compile Include="Migrations\201904291318121_PopulateMoviesDB.Designer.cs">
       <DependentUpon>201904291318121_PopulateMoviesDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905010210253_MembershipTypes.cs" />
+    <Compile Include="Migrations\201905010210253_MembershipTypes.Designer.cs">
+      <DependentUpon>201905010210253_MembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905010213211_PopulateCustomersDB.cs" />
+    <Compile Include="Migrations\201905010213211_PopulateCustomersDB.Designer.cs">
+      <DependentUpon>201905010213211_PopulateCustomersDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905010220550_PopulateDescriptionFields.cs" />
+    <Compile Include="Migrations\201905010220550_PopulateDescriptionFields.Designer.cs">
+      <DependentUpon>201905010220550_PopulateDescriptionFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905010231495_AddBirthdateToCustomerDB.cs" />
+    <Compile Include="Migrations\201905010231495_AddBirthdateToCustomerDB.Designer.cs">
+      <DependentUpon>201905010231495_AddBirthdateToCustomerDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905010232311_PopulateBirthdateInCustomerDB.cs" />
+    <Compile Include="Migrations\201905010232311_PopulateBirthdateInCustomerDB.Designer.cs">
+      <DependentUpon>201905010232311_PopulateBirthdateInCustomerDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -285,6 +305,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904291318121_PopulateMoviesDB.resx">
       <DependentUpon>201904291318121_PopulateMoviesDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905010210253_MembershipTypes.resx">
+      <DependentUpon>201905010210253_MembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905010213211_PopulateCustomersDB.resx">
+      <DependentUpon>201905010213211_PopulateCustomersDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905010220550_PopulateDescriptionFields.resx">
+      <DependentUpon>201905010220550_PopulateDescriptionFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905010231495_AddBirthdateToCustomerDB.resx">
+      <DependentUpon>201905010231495_AddBirthdateToCustomerDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905010232311_PopulateBirthdateInCustomerDB.resx">
+      <DependentUpon>201905010232311_PopulateBirthdateInCustomerDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

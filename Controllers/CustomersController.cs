@@ -37,7 +37,7 @@ namespace Vidly.Controllers
             //Customer customer = customers.Find(x => x.Id == Id);
 
             // NOTE: This also works, without using a List<> but using IEnumerable methods
-            var customers = GetAllCustomers();
+            var customers = GetAllCustomers().Include(c => c.MembershipType);
             Customer customer = customers.SingleOrDefault( c => c.Id == Id);
                  
             return View(customer);
