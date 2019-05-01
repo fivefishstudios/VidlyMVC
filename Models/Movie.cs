@@ -16,5 +16,7 @@ namespace Vidly.Models
         public DateTime DateAdded { get; set; }
         public string Rating { get; set; }
 
+        public Genre Genre { get; set; }
+
     }
 }

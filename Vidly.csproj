@@ -181,8 +181,25 @@
     <Compile Include="Migrations\201905010232311_PopulateBirthdateInCustomerDB.Designer.cs">
       <DependentUpon>201905010232311_PopulateBirthdateInCustomerDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905011241160_AddGenreDB.cs" />
+    <Compile Include="Migrations\201905011241160_AddGenreDB.Designer.cs">
+      <DependentUpon>201905011241160_AddGenreDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905011242273_PopulateGenreDB.cs" />
+    <Compile Include="Migrations\201905011242273_PopulateGenreDB.Designer.cs">
+      <DependentUpon>201905011242273_PopulateGenreDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905011256225_PopulateMovieGenreColumn.cs" />
+    <Compile Include="Migrations\201905011256225_PopulateMovieGenreColumn.Designer.cs">
+      <DependentUpon>201905011256225_PopulateMovieGenreColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905011300007_PopulateMovieStockColumn.cs" />
+    <Compile Include="Migrations\201905011300007_PopulateMovieStockColumn.Designer.cs">
+      <DependentUpon>201905011300007_PopulateMovieStockColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDBContext.cs" />
@@ -320,6 +337,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905010232311_PopulateBirthdateInCustomerDB.resx">
       <DependentUpon>201905010232311_PopulateBirthdateInCustomerDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011241160_AddGenreDB.resx">
+      <DependentUpon>201905011241160_AddGenreDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011242273_PopulateGenreDB.resx">
+      <DependentUpon>201905011242273_PopulateGenreDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011256225_PopulateMovieGenreColumn.resx">
+      <DependentUpon>201905011256225_PopulateMovieGenreColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011300007_PopulateMovieStockColumn.resx">
+      <DependentUpon>201905011300007_PopulateMovieStockColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -24,7 +24,7 @@
                 <td>@movie.Id</td>
                 <td>@movie.Name</td>
                 <td>@movie.Stock</td>
-                <td></td>
+                <td>@movie.Genre.GenreName</td>
                 <td>@Html.ActionLink("Movie Details", "View", "Movies", new { id=movie.Id }, null)</td>
             </tr>
         }

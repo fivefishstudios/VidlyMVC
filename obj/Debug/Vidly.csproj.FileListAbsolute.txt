@@ -184,3 +184,7 @@ F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateCustomersDB.resou
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateDescriptionFields.resources
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddBirthdateToCustomerDB.resources
 F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateBirthdateInCustomerDB.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreDB.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenreDB.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovieGenreColumn.resources
+F:\Dev.Websites\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovieStockColumn.resources
