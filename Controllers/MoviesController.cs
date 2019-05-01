@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -40,7 +41,7 @@ namespace Vidly.Controllers
         }
 
 
-        private IEnumerable<Movie> GetAllMovies()
+        private IQueryable<Movie> GetAllMovies()
         {
             var _movies = _context.Movies;
             return _movies;

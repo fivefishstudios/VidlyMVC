@@ -8,17 +8,23 @@
 
 <table class="table table-striped">
     <thead>
-    <td>Name</td>
-    <td>Id</td>
-    <td>View</td>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Genre</th>
+            <th>View</th>
+        </tr>
     </thead>
     <tbody>
 
-        @foreach (var movie in Model)
+        @foreach (var movie in Model.ToList())
         {
             <tr>
-                <td>@movie.Name</td>
                 <td>@movie.Id</td>
+                <td>@movie.Name</td>
+                <td>@movie.Stock</td>
+                <td></td>
                 <td>@Html.ActionLink("Movie Details", "View", "Movies", new { id=movie.Id }, null)</td>
             </tr>
         }

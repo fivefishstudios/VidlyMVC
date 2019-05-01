@@ -10,7 +10,11 @@ namespace Vidly.Models
         // properties
         public int Id { get; set; }
         public string Name { get; set; }
-
         public string Actor { get; set; }
+        public int Stock { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public DateTime DateAdded { get; set; }
+        public string Rating { get; set; }
+
     }
 }

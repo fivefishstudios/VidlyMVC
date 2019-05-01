@@ -25,7 +25,7 @@
                 <td>@customer.Name</td>
                 <td>@customer.MembershipType.Description</td>
                 <td>@customer.MembershipType.DiscountRate%</td>
-                <td>@customer.Birthdate</td>
+                <td>@customer.Birthdate.ToString("MM/dd/yyyy")</td>
                 <td>@customer.Id</td>
                 <td>@Html.ActionLink("View Details", "View", "Customers", new { id=customer.Id }, null)</td>
             </tr>
