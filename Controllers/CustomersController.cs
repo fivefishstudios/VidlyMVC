@@ -46,6 +46,7 @@ namespace Vidly.Controllers
             return _context.Customers;
         }
 
+        // GET
         public ActionResult New()
         {
             // we need to bring in MembershipType table so we can display it in a dropdown box.
@@ -59,6 +60,15 @@ namespace Vidly.Controllers
             };
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Customer customer)   // POST method for add new customer form
+        {
+            _context.Customers.Add(customer);           // add this model to Customers
+            _context.SaveChanges();                     // physically write data to database
+
+            return RedirectToAction("Index", "Customers");  // we redirect to main Customers page
         }
     }
 }
