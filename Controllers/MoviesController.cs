@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 
@@ -12,7 +9,7 @@ namespace Vidly.Controllers
     {
 
 
-        private MyDBContext _context;
+        private readonly MyDBContext _context;
 
         public MoviesController()
         {
@@ -28,7 +25,7 @@ namespace Vidly.Controllers
         // GET: Movies/Random
         public ActionResult Index()
         {
-            var movies = GetAllMovies().Include( m=> m.Genre );
+            var movies = GetAllMovies().Include(m => m.Genre);
             return View(movies);
         }
 
@@ -36,15 +33,15 @@ namespace Vidly.Controllers
         [Route("Movies/DetailView/{id}")]
         public ActionResult View(int id)
         {
-            Movie movie = GetAllMovies().Include( m=> m.Genre ).SingleOrDefault(x => x.Id == id);
+            Movie movie = GetAllMovies().Include(m => m.Genre).SingleOrDefault(x => x.Id == id);
             return View(movie);
         }
 
 
         private IQueryable<Movie> GetAllMovies()
         {
-            var _movies = _context.Movies;
-            return _movies;
+            var movies = _context.Movies;
+            return movies;
         }
 
     }
