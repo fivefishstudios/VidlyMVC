@@ -146,6 +146,35 @@ namespace Vidly.Migrations
                 }
             );
 
+            // seed Customers
+            context.Customers.AddOrUpdate(
+                c => c.Name,
+                new Customer()
+                {
+                    Name = "Peter Mayhew",
+                    City = "Nashville, TN",
+                    IsSubscribedToNewsletter = true,
+                    MembershipTypeId = 1,
+                    Birthdate = new DateTime(1967, 5, 23)
+                },
+                new Customer()
+                {
+                    Name = "John Mishori",
+                    City = "San Diego, CA",
+                    IsSubscribedToNewsletter = true,
+                    MembershipTypeId = 2,
+                    Birthdate = new DateTime(1977, 4, 3)
+                },
+                new Customer()
+                {
+                    Name = "Meanne Kondo",
+                    City = "Denver, CO",
+                    IsSubscribedToNewsletter = true,
+                    MembershipTypeId = 3,
+                    Birthdate = new DateTime(1987, 12, 16)
+                }
+            );
+
             context.SaveChanges();
         }
     }

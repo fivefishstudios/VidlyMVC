@@ -8,20 +8,21 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div >
+    <div>
         <div class="container">
             <div class="row">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Movies Page", "Index", "Movies", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Movies", "Index", "Movies", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Customers Page", "Index", "Customers", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null,  new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Genre Admin", "Index", "Genre", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" style="        margin-top: 2em">
         @RenderBody()
         <hr />
         <footer>

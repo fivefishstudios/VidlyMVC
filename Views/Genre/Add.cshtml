@@ -1,0 +1,17 @@
+﻿@model Vidly.Models.Genre
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Genre Form</h2>
+
+@using (Html.BeginForm("Save", "Genre", null, FormMethod.Post, new { @class = "myForm" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(g => g.GenreName)
+        @Html.TextBoxFor(g => g.GenreName, null, new { @class = "form-control", placeholder = "Enter genre name" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add New Genre</button>
+}

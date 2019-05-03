@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Vidly.Models.Genre>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Genre</h2>
+
+@Html.ActionLink("Add New Genre", "Add", "Genre", null, new { @class = "btn btn-primary" })
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Genre Name</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var g in Model)
+        {
+            <tr>
+                <td>@g.Id</td>
+                <td>@g.GenreName</td>
+                <td>@Html.ActionLink("Update", "Update", "Genre", new { id = g.Id }, new { @class = "btn btn-success btn-sm" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
