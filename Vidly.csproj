@@ -241,7 +241,8 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Genre\Index.cshtml" />
-    <Content Include="Views\Genre\Add.cshtml" />
+    <Content Include="Views\Genre\GenreForm.cshtml" />
+    <Content Include="Views\Genre\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

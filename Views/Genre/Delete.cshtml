@@ -1,0 +1,19 @@
+﻿@model Vidly.Models.Genre
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Genre</h2>
+
+<p>You are about to delete this record!</p>
+@using (Html.BeginForm("Remove", "Genre", null, FormMethod.Post, new { @class = "myForm" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(g => g.GenreName)
+        @Html.TextBoxFor(g => g.GenreName, null, new { @class = "form-control", disabled = "disabled", placeholder = "Enter genre name" })
+    </div>
+    @Html.HiddenFor(g => g.Id)
+    <button type="submit" class="btn btn-danger">DELETE this genre</button>
+    @Html.ActionLink("Cancel", "Index", "Genre", new { @class = "btn btn-default" })
+}
