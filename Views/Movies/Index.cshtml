@@ -6,6 +6,8 @@
 
 <h2>List of Movies</h2>
 
+@Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-primary" })
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -25,9 +27,13 @@
                 <td>@movie.Name</td>
                 <td>@movie.Stock</td>
                 <td>@movie.Genre.GenreName</td>
-                <td>@Html.ActionLink("Movie Details", "View", "Movies", new { id=movie.Id }, null)</td>
+                <td>
+                    @Html.ActionLink("Movie Details", "View", "Movies", new
+                    {
+                        id = movie.Id
+}, null)
+                </td>
             </tr>
         }
-
     </tbody>
 </table>

@@ -6,6 +6,8 @@
 
 <h2>Customers</h2>
 
+@Html.ActionLink("New Customer", "New", "Customers",null, new{@class="btn btn-primary"})
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -14,11 +16,11 @@
             <th>Discount Rate</th>
             <th>Birthday</th>
             <th>Cust.Id</th>
-            <th>View</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
-            
+
         @foreach (var customer in Model.ToList())
         {
             <tr>
@@ -27,9 +29,8 @@
                 <td>@customer.MembershipType.DiscountRate%</td>
                 <td>@customer.Birthdate.ToString("MM/dd/yyyy")</td>
                 <td>@customer.Id</td>
-                <td>@Html.ActionLink("View Details", "View", "Customers", new { id=customer.Id }, null)</td>
+                <td>@Html.ActionLink("Edit", "Edit", "Customers", new { id = customer.Id }, null)</td>
             </tr>
         }
-            
     </tbody>
 </table>

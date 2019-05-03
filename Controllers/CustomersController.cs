@@ -54,21 +54,61 @@ namespace Vidly.Controllers
 
             // but we also need to pass the Customer model
             // so we need to create a new ViewModel combining Customer model and membershipTypes
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes
             };
 
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)   // POST method for add new customer form
+        public ActionResult Save(Customer customer)   // POST method for add new customer form
         {
-            _context.Customers.Add(customer);           // add this model to Customers
+            // if customer has no id, this is a new customer and we Add to database
+            if (customer.Id == 0)
+            {
+                _context.Customers.Add(customer);           // add this model to Customers
+            }
+            else
+            {
+                // it's existing customer and we Update customer information
+                // retrieve existing record, make changes, then save
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);  // use Single, not SingleOrDefault
+                // update values
+                // TryUpdateModel(customerInDb);  // with security holes? updates all fields in database
+
+                // alternative: update manually the fields we only need changing
+                customerInDb.Name = customer.Name;
+                customerInDb.Birthdate = customer.Birthdate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+            }
             _context.SaveChanges();                     // physically write data to database
 
             return RedirectToAction("Index", "Customers");  // we redirect to main Customers page
+        }
+
+        public ActionResult Edit(int id)
+        {
+            // get this particular customer from database
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            // check for not found
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            // create CustomerFormViewModel for our edit form
+            var viewModel = new CustomerFormViewModel()
+            {
+                MembershipTypes = _context.MembershipType.ToList(),
+                Customer = customer
+            };
+
+            // customer found, return to the new page
+            return View("CustomerForm", viewModel);
         }
     }
 }

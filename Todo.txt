@@ -1,0 +1,7 @@
+﻿
+:: Create add-migration files to: 
+
+Populate MembershipType table
+DONE!! - Populate Genre table
+Populate Customer table 
+Populate Movie table
