@@ -12,21 +12,31 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Birthdate)
         @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:MM/dd/yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Birthdate)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.MembershipTypeId)
         @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Description"), "Select Membership Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
     </div>
     <div class="checkbox">
         <label>
             @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribe to Newsletter?
+            @Html.ValidationMessageFor(m => m.Customer.IsSubscribedToNewsletter)
         </label>
     </div>
-    @Html.HiddenFor(m => m.Customer.Id);
-    <!-- add button -->
+   
+     if (Model.Customer != null)
+     {
+         // for new ADD, Model.Customer will be blank
+         // we need customer id when this is an UPDATE
+         @Html.HiddenFor(m => m.Customer.Id);
+     }
+
     <button type="submit" class="btn btn-primary">Add New Customer</button>
 }

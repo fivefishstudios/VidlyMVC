@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using Vidly.Models;
 
 namespace Vidly.Controllers
@@ -48,12 +49,19 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Genre genre)
         {
+            // validate genre model
+            //if (!ModelState.IsValid)  // this does not work because id is 0 for new ADD
+            if (genre.GenreName.IsNullOrWhiteSpace())   // so let's check that GenreName isn't empty
+            {
+                return View("GenreForm", genre);
+            }
+
             // save action can be used by either ADD or UPDATE operation. we need to detect which one we're doing.
             if (genre.Id == 0)
             {
                 // this is an ADD operation
                 // select database, add model
-                _context.Genre.Add(genre);
+                _ = _context.Genre.Add(genre);
             }
             else
             {
@@ -89,14 +97,20 @@ namespace Vidly.Controllers
         // GET: Display DELETE form
         public ActionResult Delete(byte id)
         {
-            //throw new NotImplementedException();
             // retrieve this record and display to user for Delete confirmation
             // populate model with correct record based on id
-            var genreRecord = _context.Genre.Single(g => g.Id == id);
-            if (genreRecord == null)
+            // NOTE: ABEND when url passed value is more > 255 because this is declared a byte
+            var genreRecord = new Genre();
+
+            try
             {
-                // no record found
-                return HttpNotFound();
+                genreRecord = _context.Genre.Single(g => g.Id == id);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index");  // back to display all genre page
+                //Response.Write(e.Message);  // error message:Sequence contains no elements
+                //Response.End();
             }
 
             // display this Genre record in a form
@@ -108,8 +122,8 @@ namespace Vidly.Controllers
         public ActionResult Remove(Genre genre)
         {
             var recordToDelete = _context.Genre.Single(g => g.Id == genre.Id);
-            _context.Genre.Remove(recordToDelete);  // ? will this work?
-            _context.SaveChanges();
+            _ = _context.Genre.Remove(recordToDelete);
+            _ = _context.SaveChanges();
 
             // back to index page
             return RedirectToAction("Index");

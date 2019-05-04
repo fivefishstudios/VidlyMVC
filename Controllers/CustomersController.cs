@@ -65,18 +65,29 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)   // POST method for add new customer form
         {
+            // field validation
+            if (!ModelState.IsValid)
+            {
+                var customerFormViewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipType.ToList()
+                };
+                return View("CustomerForm", customerFormViewModel);
+            }
+
             // if customer has no id, this is a new customer and we Add to database
             if (customer.Id == 0)
             {
-                _context.Customers.Add(customer);           // add this model to Customers
+                _ = _context.Customers.Add(customer);           // add this model to Customers
             }
             else
             {
                 // it's existing customer and we Update customer information
                 // retrieve existing record, make changes, then save
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);  // use Single, not SingleOrDefault
-                // update values
-                // TryUpdateModel(customerInDb);  // with security holes? updates all fields in database
+                                                                                         // update values
+                                                                                         // TryUpdateModel(customerInDb);  // with security holes? updates all fields in database
 
                 // alternative: update manually the fields we only need changing
                 customerInDb.Name = customer.Name;
@@ -84,7 +95,8 @@ namespace Vidly.Controllers
                 customerInDb.MembershipTypeId = customer.MembershipTypeId;
                 customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
             }
-            _context.SaveChanges();                     // physically write data to database
+
+            _ = _context.SaveChanges();                     // physically write data to database
 
             return RedirectToAction("Index", "Customers");  // we redirect to main Customers page
         }

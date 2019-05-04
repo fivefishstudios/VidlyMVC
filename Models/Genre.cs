@@ -15,6 +15,7 @@ namespace Vidly.Models
         public byte Id { get; set; }
 
         [Display(Name = "Movie Genre")]
+        [Required(ErrorMessage = "Please enter movie genre!")]
         public string GenreName { get; set; }
     }
 }
