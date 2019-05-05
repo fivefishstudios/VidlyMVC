@@ -11,16 +11,21 @@ namespace Vidly.Models
         // properties
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         public string Actor { get; set; }
 
+        [Required]
+        [Range(1, 20, ErrorMessage = "Must be between 1 to 20.")]
         [Display(Name = "Number in Stock")]
         public int Stock { get; set; }
 
+        [Required]
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
+        [Required]
         [Display(Name = "Date Added")]
         public DateTime DateAdded { get; set; }
 
@@ -28,6 +33,7 @@ namespace Vidly.Models
 
         public Genre Genre { get; set; }
 
+        [Required]
         public byte GenreId { get; set; }
     }
 }

@@ -147,10 +147,15 @@
     <Compile Include="Migrations\201905030513046_initialmodel.Designer.cs">
       <DependentUpon>201905030513046_initialmodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905050103246_MovieClassValidation.cs" />
+    <Compile Include="Migrations\201905050103246_MovieClassValidation.Designer.cs">
+      <DependentUpon>201905050103246_MovieClassValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -261,6 +266,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905030513046_initialmodel.resx">
       <DependentUpon>201905030513046_initialmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905050103246_MovieClassValidation.resx">
+      <DependentUpon>201905050103246_MovieClassValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

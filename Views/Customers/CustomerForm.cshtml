@@ -6,6 +6,7 @@
 }
 
 <h2>New Customer</h2>
+@Html.ValidationSummary(true,"Please fix the following errors:")
 
 @using (Html.BeginForm("Save", "Customers", new { }, FormMethod.Post, new { @class = "myFormClass" }))
 {
@@ -30,13 +31,13 @@
             @Html.ValidationMessageFor(m => m.Customer.IsSubscribedToNewsletter)
         </label>
     </div>
-   
-     if (Model.Customer != null)
-     {
-         // for new ADD, Model.Customer will be blank
-         // we need customer id when this is an UPDATE
-         @Html.HiddenFor(m => m.Customer.Id);
-     }
+
+    if (Model.Customer != null)
+    {
+        // for new ADD, Model.Customer will be blank
+        // we need customer id when this is an UPDATE
+        @Html.HiddenFor(m => m.Customer.Id);
+    }
 
     <button type="submit" class="btn btn-primary">Add New Customer</button>
 }

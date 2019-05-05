@@ -138,7 +138,7 @@ namespace Vidly.Migrations
                 {
                     Name = "Toy Story",
                     Actor = "Tom Hanks",
-                    Stock = 24,
+                    Stock = 20,
                     ReleaseDate = new DateTime(1995, 5, 12),
                     DateAdded = new DateTime(1999, 12, 24),
                     Rating = "PG",

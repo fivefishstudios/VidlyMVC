@@ -54,9 +54,21 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-            // throw new System.NotImplementedException();
+            // validate fields
+            if (!ModelState.IsValid)
+            {
+                // populate fields to send back
+                var newMovie = new MovieFormViewModel()
+                {
+                    Movie = movie,
+                    Genre = _context.Genre.ToList()
+                };
+                // return to form
+                return View("MovieForm", newMovie);
+            }
 
             // if movie record is new, add to database
             if (movie.Id == 0)
