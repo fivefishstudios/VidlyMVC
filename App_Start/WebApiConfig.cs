@@ -1,4 +1,6 @@
 ﻿using System.Web.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Vidly
 {
@@ -6,7 +8,10 @@ namespace Vidly
     {
         public static void Register(HttpConfiguration config)
         {
-            //throw new System.NotImplementedException();
+            // configure JSON output to be camelCase
+            var settings = config.Formatters.JsonFormatter.SerializerSettings;
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            settings.Formatting = Formatting.Indented;
 
             config.MapHttpAttributeRoutes();
 
