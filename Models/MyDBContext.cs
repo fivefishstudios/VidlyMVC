@@ -8,7 +8,7 @@ namespace Vidly.Models
 {
     public class MyDBContext : DbContext
     {
-        public MyDBContext()
+        public MyDBContext() : base("name=DefaultConnection")
         {
             // Disable initializer
             // Database.SetInitializer<MyDBContext>(null);

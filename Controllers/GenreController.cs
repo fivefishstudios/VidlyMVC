@@ -108,8 +108,8 @@ namespace Vidly.Controllers
             }
             catch (Exception e)
             {
+                Response.Write(e.Message);  // error message:Sequence contains no elements
                 return RedirectToAction("Index");  // back to display all genre page
-                //Response.Write(e.Message);  // error message:Sequence contains no elements
                 //Response.End();
             }
 
